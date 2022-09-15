@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Kirish | {{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <h2 style="color: red;">{{form}}</h2>
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="name" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <button type="submit">Login</button>
+        <a href="/register" class="btn btn-primary">Agar ro'yhatdan o'tmagan bo'lsangiz ro'yhatdan o'ting</a>
+    </div>
+</form>
+{% endblock content %}
